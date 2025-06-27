@@ -1,0 +1,22 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: Helvetica;
+    padding-bottom: 500px;
+}
+
+h1 {
+    color: red;
+}
+
+.red-title {
+    background-color: black;
+    color: red;
+    padding: 15px;
+    border: 1px solid red;
+}
+
+.title {
+    background-color: black;
+    color: white;
+}
