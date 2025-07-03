@@ -23,6 +23,24 @@
             "name": "Smartwatch",
             "price": 299.99,
             "category": "Wearables"
+        },
+        {
+            "id": 5,
+            "name": "Playstation 5",
+            "price": 399.99,
+            "category": "Electronics"
+        },
+        {
+            "id": 6,
+            "name": "Nintendo Switch 2",
+            "price": 349.99,
+            "category": "Electronics"
+        },
+        {
+            "id": 7,
+            "name": "Computer",
+            "price": 699.99,
+            "category": "Electronics"
         }
     ]
 }
