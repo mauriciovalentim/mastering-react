@@ -1,46 +1,94 @@
 {
-    "products": [
-        {
-            "id": 1,
-            "name": "Laptop",
-            "price": 999.99,
-            "category": "Electronics"
-        },
-        {
-            "id": 2,
-            "name": "Smartphone",
-            "price": 499.99,
-            "category": "Electronics"
-        },
-        {
-            "id": 3,
-            "name": "Headphones",
-            "price": 199.99,
-            "category": "Accessories"
-        },
-        {
-            "id": 4,
-            "name": "Smartwatch",
-            "price": 299.99,
-            "category": "Wearables"
-        },
-        {
-            "id": 5,
-            "name": "Playstation 5",
-            "price": 399.99,
-            "category": "Electronics"
-        },
-        {
-            "id": 6,
-            "name": "Nintendo Switch 2",
-            "price": 349.99,
-            "category": "Electronics"
-        },
-        {
-            "id": 7,
-            "name": "Computer",
-            "price": 699.99,
-            "category": "Electronics"
-        }
-    ]
+  "products": [
+    {
+      "id": 1,
+      "name": "Laptop",
+      "price": 999.99
+    },
+    {
+      "id": 2,
+      "name": "Smartphone",
+      "price": 499.99
+    },
+    {
+      "id": 3,
+      "name": "Headphones",
+      "price": 199.99
+    },
+    {
+      "id": 4,
+      "name": "Smartwatch",
+      "price": 299.99
+    },
+    {
+      "id": 5,
+      "name": "Playstation 5",
+      "price": 399.99
+    },
+    {
+      "id": 6,
+      "name": "Nintendo Switch 2",
+      "price": 349.99
+    },
+    {
+      "id": 7,
+      "name": "Computer",
+      "price": 699.99
+    },
+    {
+      "id": "9010",
+      "name": "Xbox",
+      "price": "349.99"
+    },
+    {
+      "id": "77aa",
+      "name": "Android",
+      "price": "99.99"
+    },
+    {
+      "id": "61a4",
+      "name": "Brinco",
+      "price": "5.99"
+    },
+    {
+      "id": "19d9",
+      "name": "Colar",
+      "price": "120"
+    },
+    {
+      "id": "b45e",
+      "name": "Pelucia",
+      "price": "22"
+    },
+    {
+      "id": "cea0",
+      "name": "Disco",
+      "price": "34"
+    },
+    {
+      "id": "591d",
+      "name": "Bicicleta",
+      "price": "299"
+    },
+    {
+      "id": "0f3f",
+      "name": "Carro",
+      "price": "999.99"
+    },
+    {
+      "id": "9164",
+      "name": "Moto",
+      "price": "3251"
+    },
+    {
+      "id": "6bf8",
+      "name": "Camisa",
+      "price": "59.99"
+    },
+    {
+      "id": "fc22",
+      "name": "Hot Dog",
+      "price": "7.99"
+    }
+  ]
 }
