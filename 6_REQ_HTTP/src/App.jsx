@@ -2,37 +2,34 @@ import "./App.css";
 
 const url = "http://localhost:3000/products";
 import { useState, useEffect } from "react";
+import { useFetch } from "./hooks/useFetch";
 function App() {
     const [products, setProducts] = useState([]);
 
     const [name, setName] = useState("");
     const [price, setPrice] = useState("");
-    const [watch, setWatch] = useState(1);
 
-    useEffect(() => {
-        async function fetchData() {
-            const res = await fetch(url);
-
-            const data = await res.json();
-
-            setProducts(data);
-        }
-        fetchData();
-    }, []);
+    const { data: items, httpConfig, loading, error } = useFetch(url);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        const product = {
+            name,
+            price,
+        };
+
+        // const res = await fetch(url, {
+        //     method: "POST",
+        //     headers: { "Content-Type": "application/json" },
+        //     body: JSON.stringify({ name: name, price: price }),
+        // });
+        // const addedProduct = await res.json();
+        // setProducts((prevProducts) => [...prevProducts, addedProduct]);
+        httpConfig(product, "POST");
+
         setName("");
         setPrice("");
-
-        const res = await fetch(url, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ name: name, price: price }),
-        });
-        const addedProduct = await res.json();
-        setProducts((prevProducts) => [...prevProducts, addedProduct]);
     };
 
     return (
@@ -55,24 +52,44 @@ function App() {
                             onChange={(e) => setPrice(e.target.value)}
                         />
                     </label>
-                    <input
-                        type="submit"
-                        value="Enviar"
-                        onClick={handleSubmit}
-                    />
+                    {!loading && (
+                        <input
+                            type="submit"
+                            value="Enviar"
+                            onClick={handleSubmit}
+                        />
+                    )}
+                    {loading && (
+                        <input type="submit" value="Aguarde" disabled />
+                    )}
                 </form>
             </div>
-            <ul>
-                {products.map((product) => (
-                    <li key={product.id}>
-                        <p>{product.name}</p>{" "}
-                        <span>
-                            R$
-                            {Number(product.price).toFixed(2).replace(".", ",")}
-                        </span>
-                    </li>
-                ))}
-            </ul>
+
+            {loading && <p>Carregando dados...</p>}
+            {error && <p>{error}</p>}
+            {!error && (
+                <ul>
+                    {items &&
+                        items.map((product) => (
+                            <li key={product.id}>
+                                <p>{product.name}</p>{" "}
+                                <span>
+                                    R$
+                                    {Number(product.price)
+                                        .toFixed(2)
+                                        .replace(".", ",")}
+                                </span>
+                                <button
+                                    onClick={() => {
+                                        httpConfig(product.id, "DELETE");
+                                    }}
+                                >
+                                    Deletar
+                                </button>
+                            </li>
+                        ))}
+                </ul>
+            )}
         </>
     );
 }

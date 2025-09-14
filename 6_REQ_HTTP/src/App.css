@@ -12,14 +12,19 @@ form input {
     margin-bottom: 15px;
 }
 ul {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 20px;
-  padding: 25px 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 25px 50px;
 }
 li {
-  list-style: none;
-  border: 1px solid black;
-  padding: 30px;
-  flex: 1 0 150px;
+    list-style: none;
+    border: 1px solid black;
+    padding: 30px;
+    flex: 1 0 150px;
+}
+
+button {
+    display: block;
+    margin: 15px auto;
 }
